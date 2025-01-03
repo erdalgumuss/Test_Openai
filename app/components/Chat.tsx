@@ -52,7 +52,7 @@ export default function Chat() {
 
   // AI mesajını "typing effect" ile ekleyen fonksiyon
   const typeAIMessage = (fullText: string) => {
-    let index = 0;
+    let index = -1;
     // Öncelikle boş içerikli bir AI mesajı ekliyoruz
     setMessages((prev) => [...prev, { sender: 'AI', content: '' }]);
 
@@ -72,7 +72,7 @@ export default function Chat() {
       if (index >= fullText.length) {
         clearInterval(typingInterval);
       }
-    }, 30); // Burada hızını ayarlayabilirsiniz (ms cinsinden)
+    }, 5); // Burada hızını ayarlayabilirsiniz (ms cinsinden)
   };
 
   return (
